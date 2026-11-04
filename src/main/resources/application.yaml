@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: rideshare-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/rideshare?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ankit2003
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: 8080
+
+jwt:
+  secret: rideshare-dev-secret-key-change-this-before-deploying-1234567890
+  expiration-ms: 86400000
