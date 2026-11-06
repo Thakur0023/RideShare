@@ -4,8 +4,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/rideshare?createDatabaseIfNotExist=true
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: ankit2003
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -13,9 +13,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
 server:
   port: 8080
 
 jwt:
-  secret: rideshare-dev-secret-key-change-this-before-deploying-1234567890
+  secret: ${JWT_SECRET}
   expiration-ms: 86400000
